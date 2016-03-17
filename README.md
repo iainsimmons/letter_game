@@ -15,9 +15,9 @@ Python-based hangman style game, created for the [Python Basics](https://teamtre
 ### Command line
 
 1. Pass the path to the word list file as an argument when running the script:
-        ```terminal
-        python letter_game.py words.txt
-        ```
+    ```terminal
+    python letter_game.py words.txt
+    ```
 
 ### Python shell/REPL
 
