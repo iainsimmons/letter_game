@@ -32,7 +32,9 @@ python letter_game.py words.txt
     >>> import letter_game
     ```
 
-3. Run the `main()` function to play or poke around as you please. If running `main()` in the Python shell, you will be prompted to enter a path to the word list file.
-    ```py
-    >>> letter_game.main()
+3. Enter a path to the word list file when prompted
+    ```terminal
+    Please provide the path to a text file with a list of single words separated by new lines:
+    (or type 'quit' to exit)                                                                  
+    > words.txt       
     ```

@@ -4,7 +4,7 @@ import sys
 from time import sleep
 
 
-words = []  # global
+words = []
 
 
 def clear():
@@ -80,7 +80,6 @@ def get_guess(word):
 
 
 def play():
-    global words
     word = random.choice(words)
     max_guesses = 7 if len(word) < 7 else 10
     guess_count = 0
@@ -98,17 +97,16 @@ def play():
     play_again()
 
 
-def main(repl=True):
-    global words
+while True:
     clear()
 
-    if repl:
+    if __name__ == '__main__':
+        file_path = sys.argv[1]
+    else:
         file_path = input(
             "Please provide the path to a text file " +
             "with a list of single words separated by new lines:" +
             "\n(or type 'quit' to exit)\n> ")
-    else:
-        file_path = sys.argv[1]
 
     try:
         if file_path.lower() == 'quit':
@@ -121,13 +119,11 @@ def main(repl=True):
         if len(words) < 1:
             raise ValueError
 
+        break
+
     except EOFError:
         sys.exit(1)
     except (IndexError, FileNotFoundError, ValueError):
-        return main()
+        pass
 
-    play()
-
-
-if __name__ == '__main__':
-    main(repl=False)
+play()
